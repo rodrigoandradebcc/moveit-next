@@ -8,7 +8,7 @@ let countdownTimeout: NodeJS.Timeout;
 const Countdown: React.FC = () => {
   const {startNewChallenge} = useContext(ChallengesContext);
 
-  const [time, setTime] = useState(25 * 60);
+  const [time, setTime] = useState(0.10 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
 
@@ -25,7 +25,7 @@ const Countdown: React.FC = () => {
   function resetCountdown(){
     clearTimeout(countdownTimeout)
     setIsActive(false);
-    setTime(25*60);
+    setTime(0.10*60);
   }
 
   useEffect(()=>{
